@@ -17,7 +17,7 @@
 
 ## 🚀 Live Demo
 
-👉 **[Open the Playground →](https://YOUR-USERNAME.github.io/YOUR-REPO/)**
+👉 **[Open the Playground →](https://rrsiam.github.io/Basic-HTML-Inline-CSS-Playground/)**
 
 ---
 
