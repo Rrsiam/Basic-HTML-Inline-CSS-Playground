@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basic HTML ও Inline CSS — মজার নোট</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">🎨</span>
+    <div>
+      <h1 data-en="Basic HTML &amp; Inline CSS Playground" data-bn="Basic HTML ও Inline CSS খেলাঘর">Basic HTML ও Inline CSS খেলাঘর</h1>
+      <p class="tagline"
+         data-en="Live code playground · Basic · List · Table · Form · Inline CSS · Attributes"
+         data-bn="লাইভ কোড খেলাঘর · বেসিক · লিস্ট · টেবিল · ফর্ম · Inline CSS · অ্যাট্রিবিউট">লাইভ কোড খেলাঘর · বেসিক · লিস্ট · টেবিল · ফর্ম · Inline CSS · অ্যাট্রিবিউট</p>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button id="langBtn" class="pill-btn" type="button">English</button>
+    <button id="themeBtn" class="pill-btn" type="button">🌙 Dark</button>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-cat="basic" data-en="🧱 Basic"       data-bn="🧱 বেসিক">🧱 বেসিক</button>
+    <button class="filter-btn"        data-cat="list"  data-en="📋 List"        data-bn="📋 লিস্ট">📋 লিস্ট</button>
+    <button class="filter-btn"        data-cat="table" data-en="📊 Table"       data-bn="📊 টেবিল">📊 টেবিল</button>
+    <button class="filter-btn"        data-cat="form"  data-en="📝 Form"        data-bn="📝 ফর্ম">📝 ফর্ম</button>
+    <button class="filter-btn"        data-cat="css"   data-en="🎨 Inline CSS"  data-bn="🎨 Inline CSS">🎨 Inline CSS</button>
+    <button class="filter-btn"        data-cat="attr"  data-en="🔧 Attributes"  data-bn="🔧 অ্যাট্রিবিউট">🔧 অ্যাট্রিবিউট</button>
+  </div>
+  <div class="search-wrap">
+    <input id="searchBox" class="search" type="search"
+           data-en-ph="🔍 Search…" data-bn-ph="🔍 খুঁজুন…"
+           placeholder="🔍 খুঁজুন…" aria-label="Search">
+    <span id="countText" class="count-text" aria-live="polite"></span>
+  </div>
+</div>
+
+<main>
+  <p class="how-to"
+     data-en="How to read a card: the tag or property name at the top, what it does below, then the code on the left and the live output on the right. The code box is editable — change it and the output updates instantly. Press ↺ to restore the original example. The dashed frame around the output is only there so you can see the box; on your own page you would write border:1px solid yourself."
+     data-bn="কীভাবে পড়বেন: উপরে ট্যাগ/প্রপার্টির নাম, নিচে তার কাজ, তারপর বামে কোড ও ডানে লাইভ আউটপুট। কোড বক্সটি এডিট করা যায় — বদলালেই আউটপুট সাথে সাথে বদলে যায়। আগের উদাহরণ ফিরিয়ে আনতে ↺ চাপুন। আউটপুটের চারপাশের ড্যাশ বর্ডার শুধু বক্স বোঝানোর জন্য; নিজের পেজে চাইলে style=&quot;border:1px solid&quot; দিতে হবে।">কীভাবে পড়বেন: উপরে ট্যাগ/প্রপার্টির নাম, নিচে তার কাজ, তারপর বামে কোড ও ডানে লাইভ আউটপুট। কোড বক্সটি এডিট করা যায় — বদলালেই আউটপুট সাথে সাথে বদলে যায়। আগের উদাহরণ ফিরিয়ে আনতে ↺ চাপুন।</p>
+
+  <section id="cards" class="cards" aria-live="polite"></section>
+
+  <section class="quiz" id="quiz">
+    <h2 data-en="🎯 Quiz Time" data-bn="🎯 কুইজ টাইম">🎯 কুইজ টাইম</h2>
+    <p class="section-sub"
+       data-en="10 multiple-choice questions for this tab — every answer is included."
+       data-bn="এই ট্যাবের জন্য ১০টি বহুনির্বাচনী প্রশ্ন — প্রতিটির উত্তর দেওয়া আছে।">এই ট্যাবের জন্য ১০টি বহুনির্বাচনী প্রশ্ন — প্রতিটির উত্তর দেওয়া আছে।</p>
+
+    <!-- shown until the user presses Start in this tab -->
+    <div id="quizStart" class="quiz-start">
+      <button id="startQuiz" class="pill-btn dark-text start-btn" type="button"
+              data-en="▶ Start Quiz" data-bn="▶ কুইজ শুরু করুন">▶ কুইজ শুরু করুন</button>
+    </div>
+
+    <!-- questions appear here automatically after Start -->
+    <div id="quizBody" class="hidden">
+      <div class="score-bar">
+        <span id="scoreText">স্কোর: 0 / 10</span>
+        <button id="resetQuiz" class="pill-btn dark-text" type="button" data-en="🔄 Reset" data-bn="🔄 আবার শুরু">🔄 আবার শুরু</button>
+      </div>
+
+      <h3 data-en="Part A — Multiple choice" data-bn="পর্ব ক — বহুনির্বাচনী">পর্ব ক — বহুনির্বাচনী</h3>
+      <div id="mcqList" class="q-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p data-en="Made with ❤️ for young coders — HTML &amp; Inline CSS notes."
+     data-bn="ছোট্ট কোডারদের জন্য ❤️ দিয়ে তৈরি — HTML ও Inline CSS নোট।">ছোট্ট কোডারদের জন্য ❤️ দিয়ে তৈরি।</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
